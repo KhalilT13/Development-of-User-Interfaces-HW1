@@ -91,6 +91,3 @@ Khalil Talhami
 ## Course
 
 Development of User Interfaces
-## Author
-
-Khalil Talhami
