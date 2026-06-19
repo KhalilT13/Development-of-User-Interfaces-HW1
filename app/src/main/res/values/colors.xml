@@ -3,4 +3,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="heart_color">#FF0000</color>
+    <color name="menu_background">#F7FAFC</color>
+    <color name="surface_light">#FDFEFE</color>
+    <color name="surface_soft">#E8F4F1</color>
+    <color name="road_dark">#2D3135</color>
+    <color name="road_light">#6E7378</color>
+    <color name="primary_teal">#00796B</color>
+    <color name="primary_teal_dark">#004D40</color>
+    <color name="accent_amber">#FFC107</color>
+    <color name="accent_coral">#FF5252</color>
+    <color name="text_dark">#1F2933</color>
+    <color name="text_muted">#52616B</color>
+    <color name="text_light">#FFFFFFFF</color>
+    <color name="crash_red">#E53935</color>
 </resources>

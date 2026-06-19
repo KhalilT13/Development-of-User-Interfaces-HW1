@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/road_dark"
+    tools:context=".GameActivity">
+
+    <com.example.developmentofuserinterfaceshw1.RoadView
+        android:id="@+id/roadBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/gameMatrix"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/road_side_inset"
+        android:layout_marginEnd="@dimen/road_side_inset"
+        android:background="@android:color/transparent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/crashOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/crash_red"
+        android:clickable="false"
+        android:focusable="false"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/gameStats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/stats_background"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/modeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Button mode - slow" />
+
+            <TextView
+                android:id="@+id/scoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_light"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Score: 0" />
+
+            <TextView
+                android:id="@+id/distanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_light"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Distance: 0 m" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/life1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="@string/life"
+            app:srcCompat="@drawable/coffee_cup" />
+
+        <ImageView
+            android:id="@+id/life2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="@string/life"
+            app:srcCompat="@drawable/coffee_cup" />
+
+        <ImageView
+            android:id="@+id/life3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/life"
+            app:srcCompat="@drawable/coffee_cup" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/leftButton"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/circle_button_background"
+        android:contentDescription="@string/move_left"
+        android:elevation="8dp"
+        android:padding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/left_arrow_movement"
+        app:tint="@color/text_light" />
+
+    <ImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/circle_button_background"
+        android:contentDescription="@string/move_right"
+        android:elevation="8dp"
+        android:padding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/right_arrow_movement"
+        app:tint="@color/text_light" />
+
+    <TextView
+        android:id="@+id/countdownText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/crash_red"
+        android:textSize="58sp"
+        android:shadowColor="#66000000"
+        android:shadowDx="0"
+        android:shadowDy="3"
+        android:shadowRadius="8"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/gameOverText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_over"
+        android:textColor="@color/text_light"
+        android:textSize="42sp"
+        android:shadowColor="#99000000"
+        android:shadowDx="0"
+        android:shadowDy="4"
+        android:shadowRadius="10"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/gameOverActions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/gameOverActions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/menu_panel_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gameOverText">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/restartButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/start_again"
+            android:textColor="@color/text_light"
+            app:backgroundTint="@color/primary_teal"
+            app:cornerRadius="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/highScoresButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/high_scores"
+            android:textColor="@color/text_dark"
+            app:backgroundTint="@color/surface_light"
+            app:cornerRadius="16dp"
+            app:strokeColor="#B8D6D0"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menuButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/main_menu"
+            android:textColor="@color/text_dark"
+            app:backgroundTint="@color/surface_light"
+            app:cornerRadius="16dp"
+            app:strokeColor="#B8D6D0"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
