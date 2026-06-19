@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">Development of user interfaces HW1</string>
+    <string name="app_name">Road Runner HW2</string>
+    <string name="button_mode_slow">Button mode - slow</string>
+    <string name="button_mode_fast">Button mode - fast</string>
+    <string name="sensor_mode">Sensor mode</string>
+    <string name="sensor_mode_speed_format">Sensor mode - %1$s</string>
+    <string name="menu_subtitle">Pick a control style and chase the longest run</string>
+    <string name="score_format">Score: %1$d</string>
+    <string name="distance_format">Distance: %1$d m</string>
+    <string name="life">Life</string>
+    <string name="move_left">Move left</string>
+    <string name="move_right">Move right</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="start_again">Start Again</string>
+    <string name="high_scores">High Scores</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="back">Back</string>
+    <string name="no_scores_yet">No scores yet</string>
+    <string name="high_score_item_format">#%1$d  Score: %2$d  Distance: %3$d m\n%4$s\nLat: %5$s  Lon: %6$s</string>
+    <string name="map_location_format">Location: %1$s, %2$s</string>
+    <string name="no_location_for_score">No saved location for this score</string>
+    <string name="rank_header">Rank</string>
+    <string name="score_header">Score</string>
+    <string name="distance_header">Distance</string>
+    <string name="date_time_header">Date/time</string>
 </resources>
